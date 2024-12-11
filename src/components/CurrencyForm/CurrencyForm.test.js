@@ -44,6 +44,8 @@ describe('Component CurrencyForm', () => {
             //check if action callback was called with proper data
             expect(action).toHaveBeenCalledWith(testObj);
 
+            // unmount component
+            cleanup()
         });
     }
 });
