@@ -15,7 +15,6 @@ describe('Component CurrencyForm', () => {
         { amount: '345', from: 'USD', to: 'PLN' },
     ];
 
-
     for (const testObj of testCases) {
         it('should run action callback with proper data on form submit', () => {
             
@@ -42,7 +41,7 @@ describe('Component CurrencyForm', () => {
             expect(action).toHaveBeenCalledTimes(1);
 
             //check if action callback was called with proper data
-            expect(action).toHaveBeenCalledWith(testObj);
+            expect(action).toHaveBeenCalledWith({ amount: Number(testObj.amount), from: testObj.from, to: testObj.to });
 
             // unmount component
             cleanup()
